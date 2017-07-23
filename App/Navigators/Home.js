@@ -2,55 +2,8 @@ import React, { Component } from 'react';
 import { View, StyleSheet, Button, Text } from 'react-native';
 import { TabNavigator } from 'react-navigation';
 
-import CameraView from '../Scenes/CameraView';
-import Map from '../Scenes/Map';
-
-class MyHomeScreen extends React.Component {
-  static navigationOptions = {
-    tabBarLabel: 'Home',
-    // Note: By default the icon is only shown on iOS. Search the showIcon option below.
-    tabBarIcon: ({ tintColor }) => (
-      <View
-        style={[styles.icon, { tintColor: tintColor }]}
-      ></View>
-    ),
-  };
-
-  render() {
-    return (
-      <Button
-        onPress={() => this.props.navigation.navigate('Notifications')}
-        title="Go to notifications"
-      />
-    );
-  }
-}
-
-class MyNotificationsScreen extends React.Component {
-  static navigationOptions = {
-    tabBarLabel: 'Notifications',
-    tabBarIcon: ({ tintColor }) => (
-      <View
-        style={[styles.icon, { tintColor: tintColor }]}
-      ></View>
-    ),
-  };
-
-  render() {
-    return (
-      <View>
-      <Button
-        onPress={() => this.props.navigation.goBack()}
-        title="Go back home"
-      />
-      <Button
-        onPress={() => this.props.navigation.navigate('Map')}
-        title="Go to Map"
-      />
-      </View>
-    );
-  }
-}
+import HomeScreen from '../Scenes/Home';
+import Nav from '../Navigators/Nav';
 
 const styles = StyleSheet.create({
   icon: {
@@ -62,16 +15,10 @@ const styles = StyleSheet.create({
 
 const MyApp = TabNavigator({
   Home: {
-    screen: MyHomeScreen,
+    screen: HomeScreen,
   },
-  Notifications: {
-    screen: MyNotificationsScreen,
-  },
-  Map: {
-    screen: Map,
-  },
-  Camera: {
-    screen: CameraView,
+  Nav: {
+    screen: Nav,
   },
 }, {
   tabBarOptions: {

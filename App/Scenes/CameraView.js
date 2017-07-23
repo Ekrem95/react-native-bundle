@@ -11,7 +11,7 @@ import {
 
 import ImagePicker from 'react-native-image-picker';
 
-export default class App extends React.Component {
+export default class CameraView extends React.Component {
 
   state = {
     avatarSource: null,
