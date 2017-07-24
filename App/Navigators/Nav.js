@@ -4,6 +4,7 @@ import { StackNavigator } from 'react-navigation';
 import CameraView from '../Scenes/CameraView';
 import MapView from '../Scenes/Map';
 import NavScreen from '../Scenes/NavScreen';
+import Notifications from '../Scenes/notification/index';
 
 export default class Nav extends React.Component {
   render() {
@@ -36,6 +37,11 @@ const ModalStack = StackNavigator({
   Camera: {
     path: 'camera/',
     screen: CameraView,
+    navigationOptions: navOptions,
+  },
+  Notifications: {
+    path: 'notifications/',
+    screen: Notifications,
     navigationOptions: navOptions,
   },
 },

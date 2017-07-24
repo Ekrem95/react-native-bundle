@@ -26,6 +26,12 @@ export default class NavScreen extends React.Component {
             title="Go to Camera"
           />
         </View>
+        <View>
+          <Button
+            onPress={() => this.props.navigation.navigate('Notifications')}
+            title="Go to Notifications"
+          />
+        </View>
       </View>
     );
   }
